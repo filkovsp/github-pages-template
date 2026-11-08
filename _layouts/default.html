@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="site-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <a class="repo-link" href="{{ site.repository_url }}">View repository ↗</a>
+    </header>
+
+    <main id="main-content">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <span>{{ site.title }}</span>
+      <a href="{{ '/' | relative_url }}">Course home</a>
+    </footer>
+  </div>
+</body>
+</html>
