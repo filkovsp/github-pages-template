@@ -1,0 +1,28 @@
+title: GitHub Page Template
+description: GitHub Page Template for rendering pages as Presentation slides
+lang: en
+
+# GitHub Pages project-site settings.
+# Replace USERNAME and REPOSITORY with your GitHub username and repository name.
+url: "https://filkovsp.github.io"
+baseurl: "/github-pages-template"
+
+# Used to construct links from theory pages to homework files in GitHub.
+repository_url: "https://github.com/filkovsp/github-pages-template"
+default_branch: "main"
+
+markdown: kramdown
+permalink: pretty
+
+# These directories/files stay in the Git repository but are not copied
+# into the generated website.
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .github/
+  - "**/homework/"
+
+# GitHub Pages builds with its supported Jekyll environment.
+# No custom plugins are required for this starter.

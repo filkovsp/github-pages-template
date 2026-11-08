@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<article class="slide-page">
+  <div class="slide-topline">
+    <a href="{{ page.lesson_url | default: '/' | relative_url }}">← Back to lesson</a>
+    <span>{{ page.lesson_label | default: "Course material" }}</span>
+  </div>
+
+  <header class="slide-heading">
+    <p class="eyebrow">{{ page.lesson_label | default: "LESSON" }}</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="slide-subtitle">{{ page.subtitle }}</p>{% endif %}
+  </header>
+
+  <div class="slide-content">
+    {{ content }}
+  </div>
+
+  {% if page.homework_path %}
+  <aside class="homework-callout">
+    <div>
+      <p class="eyebrow">PUT IT INTO PRACTICE</p>
+      <h2>Ready for the homework?</h2>
+      <p>Open the instructions and JavaScript task files in the GitHub repository.</p>
+    </div>
+    <a class="button-link" href="{{ site.repository_url }}/blob/{{ site.default_branch }}/{{ page.homework_path }}">Open homework ↗</a>
+  </aside>
+  {% endif %}
+
+  <nav class="page-navigation" aria-label="Page navigation">
+    {% if page.previous_page %}
+      <a href="{{ page.previous_page | relative_url }}">← Previous</a>
+    {% else %}
+      <span></span>
+    {% endif %}
+    {% if page.next_page %}
+      <a href="{{ page.next_page | relative_url }}">Next →</a>
+    {% endif %}
+  </nav>
+</article>
